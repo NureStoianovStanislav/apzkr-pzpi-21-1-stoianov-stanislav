@@ -1,0 +1,40 @@
+[package]
+name = "libmarse"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.83"
+thiserror = "1.0.60"
+
+axum = "0.7.5"
+axum-extra = { version = "0.9.3", features = ["cookie"] }
+tower-http = { version = "0.5.2", features = ["cors"] }
+
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+serde = { version = "1.0.201", features = ["derive"] }
+serde_with = "3.8.1"
+serde-aux = { version = "4.5.0", default-features = false }
+
+config = "0.14.0"
+strum = "0.26.2"
+strum_macros = "0.26.2"
+
+aes = "0.8.4"
+secrecy = { version = "0.8.0", features = ["serde"] }
+uuid = { version = "1.8.0", features = ["v4", "serde"] }
+argon2 = { version = "0.5.3", features = ["std", "zeroize"] }
+jsonwebtoken = "9.3.0"
+chrono = { version = "0.4.38", features = ["serde"] }
+
+[dependencies.tokio]
+version = "1.37.0"
+default-features = false
+features = ["macros", "rt-multi-thread"]
+
+[dependencies.sqlx]
+version = "0.7.4"
+default-features = false
+features = ["runtime-tokio", "tls-native-tls", "postgres", "macros", "uuid", "rust_decimal", "chrono"]

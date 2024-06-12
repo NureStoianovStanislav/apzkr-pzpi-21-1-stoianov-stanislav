@@ -1,0 +1,29 @@
+http:
+  host: [127, 0, 0, 1]
+  port: 8080
+
+database:
+  host: 127.0.0.1
+  port: 5432
+  user: postgres
+  password: postgres
+  database: postgres
+  require_ssl: false
+
+id_key: "quuxquuxquuxquux"
+
+hasher:
+  key: ""
+  memory_size: 16
+  iterations: 1
+  parallelism_factor: 1
+  output_length: 32
+
+jwt:
+  key: ""
+  access_ttl: 900
+  refresh_ttl: 2678400
+
+backup: 
+  cmd: docker
+  args: [compose, exec, postgres, pg_dump]
